@@ -1,0 +1,25 @@
+name: clementine_clash
+channels:
+  - conda-forge
+  - defaults
+  - pytorch
+dependencies:
+  - python=3.12
+  - jupyter
+  - ipywidgets
+  - ipython
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - statsmodels
+  - plotly
+  - textblob
+  - gymnasium
+  - palmerpenguins
+  - tensorflow
+  - pytorch
+  - torchvision
+  - pip
+  - selenium
