@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-df = pd.read_csv("/workspaces/cosmos_2025_personal/micro_project/smoking_health_data_final.csv")
+df = pd.read_csv("/Users/jpxmaestas/clementine_clash/clementine_clash/clementine_clash-1/regression_project/smoking_health_data_final.csv")
 
 df.iloc[:,0] = pd.to_numeric(df.iloc[:, 0], errors='coerce')
 mean = np.mean(df.iloc[:,0])
@@ -71,4 +71,4 @@ a = chol_mean - b * cig_mean
 
 plt.axline((0, a), slope=b, color='red', linestyle='--')
 
-plt.savefig("output_plot.png", )
+plt.savefig("output_plot.png")
