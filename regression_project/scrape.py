@@ -1,15 +1,19 @@
-import pandas as pd
-import kaggle
 import os
 import subprocess
+import key
 
-path = "/workspaces/cosmos_2025_personal/lecture_three"
+os.environ['KAGGLE_USERNAME'] = key.username
+os.environ['KAGGLE_KEY'] = key.key
 
+path = "/Users/jpxmaestas/clementine_clash/clementine_clash/clementine_clash-1/regression_project"
 os.makedirs('./data', exist_ok=True)
+download_dir = "./data"
+zip_path = os.path.join(download_dir, "smokers-health-data.zip")
+
 
 subprocess.run([
     "kaggle", "datasets", "download", "-d", "jaceprater/smokers-health-data", "--force"
-])
+], check= True)
 
 # Unzip
 subprocess.run([
