@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spotify Login</title>
+  </head>
+  <body>
+    <h1>Login with Spotify</h1>
+    <button onclick="login()">Log in</button>
+
+    <script>
+      function login() {
+        const clientId = "eyJhcHBOYW1lIjoid2ViX3BsYXllcl9wcm90b3R5cGUiLCJtYXJrZXQiOiJVUyIsImxvY2FsZSI6eyJsb2NhbGUiOiJlbiIsInJ0bCI6ZmFsc2UsInRleHREaXJlY3Rpb24iOiJsdHIifSwidXNlckNvdW50cnkiOiJVUyIsImlzUHJlbWl1bSI6dHJ1ZSwiY29ycmVsYXRpb25JZCI6IjM1ZjY3MjU4LTM3OTctNGViZC1iOTRmLWMxYjc4ZjQ4N2JmOCIsImlzQW5vbnltb3VzIjpmYWxzZSwiZ3RtSWQiOiJHVE0tUFpITjNWRCIsIm9wdGltaXplSWQiOiJHVE0tVzUzWDY1NCIsInBpcFJlc291cmNlcyI6eyJzY3JpcHRzIjpbImh0dHBzOi8vb3Blbi1leHAuc3BvdGlmeWNkbi5jb20vY2RuL2J1aWxkL3dlYi1wbGF5ZXIvdmVuZG9yfndlYi1wbGF5ZXIuZTYyZTM3ZjIuanMiLCJodHRwczovL29wZW4tZXhwLnNwb3RpZnljZG4uY29tL2Nkbi9idWlsZC93ZWItcGxheWVyL3BpcC1taW5pLXBsYXllci4zOWE4MjhlYS5qcyJdLCJzdHlsZXMiOlsiaHR0cHM6Ly9vcGVuLWV4cC5zcG90aWZ5Y2RuLmNvbS9jZG4vYnVpbGQvd2ViLXBsYXllci9waXAtbWluaS1wbGF5ZXIuZTYxOGQwZDEuY3NzIl19LCJyZXRhcmdldGluZ1BpeGVscyI6eyJ0d2l0dGVyIjoibzQ2enAiLCJwaW50ZXJlc3QiOiIyNjE3NjA4MTk3NTEyIiwic25hcGNoYXQiOiJmZmY3ZjE5OC1lNmFhLTQ4MzMtYjkwMC05MmQzODU0NDczYjIifSwicmVjYXB0Y2hhV2ViUGxheWVyRnJhdWRTaXRlS2V5IjoiNkxmQ1ZMQVVBQUFBQUxGd3dSbm5DSjEyRGFscmlVR2JqOEZXX0ozOSIsInNlcnZlclRpbWUiOjE3NTM0ODY3MjB9"
+        const redirectUri = "https://jpmm3005.github.io/brownian_noise/callback/";
+        const scope = "user-top-read user-read-recently-played";
+
+        const authUrl =
+          "https://accounts.spotify.com/authorize?" +
+          `client_id=${clientId}` +
+          `&response_type=token` +
+          `&redirect_uri=${encodeURIComponent(redirectUri)}` +
+          `&scope=${encodeURIComponent(scope)}`;
+
+        window.location.href = authUrl;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spotify Callback</title>
+  </head>
+  <body>
+    <script>
+      const hash = window.location.hash.substring(1);
+      const params = new URLSearchParams(hash);
+      const token = params.get('access_token');
+
+      if (token) {
+        localStorage.setItem('spotify_token', token);
+        document.body.innerHTML = `<h1>Success!</h1><p>Token stored in localStorage.</p>`;
+      } else {
+        document.body.innerHTML = `<h1>Error</h1><p>No access token found.</p>`;
+      }
+    </script>
+  </body>
+</html>
